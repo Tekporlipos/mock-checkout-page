@@ -1,0 +1,27 @@
+.banner{
+  display: flex;
+  justify-content: flex-start;
+  align-content: center;
+  flex-direction: row;
+}
+h4{
+  font-family: monospace;
+  text-transform: uppercase;
+}
+.img-circle-70{
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+.shape{
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+}
+.bg-gray{
+  background-color: gray;
+}
