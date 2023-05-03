@@ -1,27 +1,63 @@
-# MockCheckoutPage
+# Mock Checkout Page
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.4.
+This project is a mock checkout page for buying tickets to a show, created using Angular. 
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+### Getting Started
 
-## Code scaffolding
+To get started with the project, follow these steps:
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+    Clone the repository to your local machine by running the following command:
 
-## Build
+bash
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+`git clone https://github.com/<your-username>/mock-checkout-page.git`
 
-## Running unit tests
+    Navigate to the project directory by running the following command:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+bash
 
-## Running end-to-end tests
+`cd mock-checkout-page`
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+    Install the dependencies by running the following command:
 
-## Further help
+`npm install`
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+    Run the development server by running the following command:
+
+`ng serve`
+
+    Open your web browser and navigate to http://localhost:4200/ to view the project.
+
+### Features
+
+The mock checkout page includes the following features:
+
+    A list of upcoming shows to select from
+    The ability to select the quantity of tickets
+    An order summary that shows the total cost with fees
+    A form for entering basic billing information
+    A button for simulating the checkout process
+
+### Technologies Used
+
+The project was created using the following technologies:
+
+    Angular
+    Angular Material
+    Bootstrap
+
+### Contributions
+
+Contributions to the project are welcome. If you would like to contribute, please follow these steps:
+
+    Fork the repository to your own GitHub account.
+    Clone the forked repository to your local machine.
+    Create a new branch for your changes.
+    Make your changes and commit them.
+    Push your changes to your forked repository.
+    Create a pull request to merge your changes into the main repository.
+
+### License
+
+This project is licensed under the MIT License. See the LICENSE file for more information.
