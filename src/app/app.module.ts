@@ -11,18 +11,20 @@ import {MatInputModule} from "@angular/material/input";
 import {MatSelectModule} from "@angular/material/select";
 import {FormsModule} from "@angular/forms";
 import { OrderPageComponent } from './order/order-page/order-page.component';
+import { AddCardsPageComponent } from './crads/add-cards-page/add-cards-page.component';
 
 const routes: Routes = [
   { path: '', component: ShowsPageComponent },
   { path: 'checkout', component: OrderPageComponent },
-  // { path: 'add-card', component: CheckoutComponent }
+  { path: 'add-card', component: AddCardsPageComponent }
 ];
 @NgModule({
   declarations: [
     AppComponent,
     ShowsPageComponent,
     QuantityPageComponent,
-    OrderPageComponent
+    OrderPageComponent,
+    AddCardsPageComponent
   ],
   imports: [
     BrowserModule,
