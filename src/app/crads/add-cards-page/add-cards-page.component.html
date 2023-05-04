@@ -1,1 +1,34 @@
-<p>add-cards-page works!</p>
+<h2 mat-dialog-title>Add Card</h2>
+<mat-dialog-content>
+  <form [formGroup]="creditCardForm" (ngSubmit)="onSubmit()">
+    <label for="card-name">Card Name:</label>
+    <input type="text" id="card-name" formControlName="cardName" required>
+    <div *ngIf="creditCardForm.get('cardName')?.touched && creditCardForm.get('cardName')?.invalid" class="text-danger">
+      Card name is required.
+    </div>
+
+    <label for="card-number">Card Number:</label>
+    <input type="text" id="card-number" formControlName="cardNumber" required>
+    <div *ngIf="creditCardForm.get('cardNumber')?.touched && creditCardForm.get('cardNumber')?.invalid" class="text-danger">
+      Card number is required.
+    </div>
+
+    <label for="expiration-date">Expiration Date (MM/YY):</label>
+    <input type="text" id="expiration-date" formControlName="expirationDate" required>
+    <div *ngIf="creditCardForm.get('expirationDate')?.touched && creditCardForm.get('expirationDate')?.invalid" class="text-danger">
+      Expiration date is required.
+    </div>
+
+    <label for="cvv">CVV:</label>
+    <input type="text" id="cvv" formControlName="cvv" required>
+    <div *ngIf="creditCardForm.get('cvv')?.touched && creditCardForm.get('cvv')?.invalid" class="text-danger">
+      CVV is required.
+    </div>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <span class="action-buttons flex-row justify-content-between">
+    <button class="btn-success bg-danger" mat-button mat-dialog-close>Cancel</button>
+    <button class="btn-success bg-success" mat-button mat-dialog-close (click)="onSubmit()" [disabled]="creditCardForm.invalid">Add Card</button>
+  </span>
+</mat-dialog-actions>

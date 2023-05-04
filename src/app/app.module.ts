@@ -9,14 +9,14 @@ import {MatIconModule} from "@angular/material/icon";
 import { QuantityPageComponent } from './shows/quantity-page/quantity-page.component';
 import {MatInputModule} from "@angular/material/input";
 import {MatSelectModule} from "@angular/material/select";
-import {FormsModule} from "@angular/forms";
+import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { OrderPageComponent } from './order/order-page/order-page.component';
 import { AddCardsPageComponent } from './crads/add-cards-page/add-cards-page.component';
+import {MatDialogModule} from "@angular/material/dialog";
 
 const routes: Routes = [
   { path: '', component: ShowsPageComponent },
   { path: 'checkout', component: OrderPageComponent },
-  { path: 'add-card', component: AddCardsPageComponent }
 ];
 @NgModule({
   declarations: [
@@ -34,7 +34,9 @@ const routes: Routes = [
     MatInputModule,
     MatSelectModule,
     FormsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    ReactiveFormsModule,
+    MatDialogModule
   ],
   exports: [RouterModule],
   providers: [],
