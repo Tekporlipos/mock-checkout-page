@@ -13,10 +13,14 @@ import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { OrderPageComponent } from './order/order-page/order-page.component';
 import { AddCardsPageComponent } from './crads/add-cards-page/add-cards-page.component';
 import {MatDialogModule} from "@angular/material/dialog";
+import { DeliveryComponent } from './component/delivery/delivery.component';
+import { PaymentComponent } from './component/payment/payment.component';
+import { CheckoutComponent } from './component/checkout/checkout.component';
+import { CheckComponent } from './component/check/check.component';
 
 const routes: Routes = [
   { path: '', component: ShowsPageComponent },
-  { path: 'checkout', component: OrderPageComponent },
+  { path: 'checkout/:id', component: OrderPageComponent },
 ];
 @NgModule({
   declarations: [
@@ -24,7 +28,11 @@ const routes: Routes = [
     ShowsPageComponent,
     QuantityPageComponent,
     OrderPageComponent,
-    AddCardsPageComponent
+    AddCardsPageComponent,
+    DeliveryComponent,
+    PaymentComponent,
+    CheckoutComponent,
+    CheckComponent
   ],
   imports: [
     BrowserModule,

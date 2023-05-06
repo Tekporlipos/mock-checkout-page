@@ -1,25 +1,38 @@
 <div class="container">
   <h2>Upcoming Shows</h2>
-  <div class="card">
+  <div class="card m-1" *ngFor="let event of events ; let i = index">
     <div class="card-body">
       <div class="row">
-        <div class="col-1">
-          arrow
+        <div class="col-md-2 col-lg-2 col-sm-12 flex-row">
+          <div class="p-1">
+            <svg *ngIf="i === at" (click)="showTickets(-1)" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="24">
+              <path d="m283 711-43-43 240-240 240 239-43 43-197-197-197 198Z"/>
+            </svg>
+            <svg *ngIf="i !== at" (click)="showTickets(i)" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="24">
+              <path d="M480 711 240 471l43-43 197 198 197-197 43 43-240 239Z"/>
+            </svg>
+          </div>
+          <div>
+            <b class="text-info fw-normal h5">{{getMonthAndDay(event.date)}}</b> <br>
+            <small class="text-dark fw-light">{{getDayOfWeek(event.date)}} <span class="fw-bolder">.</span> {{event.time}}</small>
+          </div>
         </div>
-        <div class="col-2">
-          <b class="text-danger text-body">May 10</b> <br>
-          <small>Web . 7:00pm</small>
+        <div class="col-md-8 col-lg-8 col-sm-12">
+          <div *ngIf="i !== at">
+            <b class=" h6 pb-1">{{event.name}}  - {{event.title}}</b>
+            <p class="fw-light">{{event.host.name}}</p>
+          </div>
+          <div *ngIf="i === at">
+            <h5 class="fs-6 pb-1">{{event.host.name}} <span class="fw-bolder">.</span> {{event.name}}</h5>
+          </div>
         </div>
-        <div class="col-7">
-          <b>Friends Arena - Stockholm, Sweden</b>
-          <p>BEYONCE - RENAISSANCE WORLD TOUR</p>
-        </div>
-        <div class="col-2">
-          <button routerLink="/checkout" class="btn btn-primary">See Tickets</button>
+        <div class="col-lg-2 col-md-2 col-sm-12 left">
+          <button  *ngIf="i !== at" (click)="showTickets(i)"  class="btn btn-primary">See Tickets</button>
+          <button  *ngIf="i === at" [routerLink]="'/checkout/'+event.id" class="btn btn-primary">Checkout</button>
         </div>
       </div>
-      <div>
-        <app-quantity-page/>
+      <div *ngIf="i === at">
+        <app-quantity-page [event]="event" />
       </div>
     </div>
   </div>

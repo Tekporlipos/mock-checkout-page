@@ -1,34 +1,35 @@
-import { Component } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {AppServiceService} from "../../app-service.service";
+import {getDayFromDate,formatDate} from "../../util/helpers";
 
 @Component({
   selector: 'app-shows-page',
   templateUrl: './shows-page.component.html',
   styleUrls: ['./shows-page.component.css']
 })
-export class ShowsPageComponent {
+export class ShowsPageComponent implements OnInit {
+  events: any[] = [];
 
-  addToCheckout(show:any): void {
-    show.selected = true;
-    // Implement logic to add show to checkout here
+  at:number = -1;
+
+
+  constructor(private eventService: AppServiceService) { }
+
+  ngOnInit() {
+    this.events = this.eventService.getEvents();
   }
-  upcomingShows = [
-    {
-      name: 'Hamilton',
-      datetime: 'July 1, 2023 7:30 PM',
-      host: 'Richard Rodgers Theatre',
-      selected: false
-    },
-    {
-      name: 'Wicked',
-      datetime: 'August 15, 2023 2:00 PM',
-      host: 'Gershwin Theatre',
-      selected: false
-    },
-    {
-      name: 'The Lion King',
-      datetime: 'September 30, 2023 8:00 PM',
-      host: 'Minskoff Theatre',
-      selected: false
-    }
-  ];
+
+  public getDayOfWeek(date:string): string {
+    return getDayFromDate(date);
+  }
+
+  public showTickets(id:number){
+    this.at = id;
+  }
+
+
+  public getMonthAndDay(date:string): string {
+    return formatDate(date);
+  }
+
 }

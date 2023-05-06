@@ -5,3 +5,7 @@
   justify-content: left;
   align-content: center;
 }
+
+.left{
+  text-align: end;
+}

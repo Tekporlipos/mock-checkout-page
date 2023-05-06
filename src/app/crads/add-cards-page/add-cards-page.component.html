@@ -2,25 +2,25 @@
 <mat-dialog-content>
   <form [formGroup]="creditCardForm" (ngSubmit)="onSubmit()">
     <label for="card-name">Card Name:</label>
-    <input type="text" id="card-name" formControlName="cardName" required>
+    <input type="text" placeholder="John Doe" id="card-name"  formControlName="cardName" required>
     <div *ngIf="creditCardForm.get('cardName')?.touched && creditCardForm.get('cardName')?.invalid" class="text-danger">
       Card name is required.
     </div>
 
     <label for="card-number">Card Number:</label>
-    <input type="text" id="card-number" formControlName="cardNumber" required>
+    <input type="text" placeholder="00000000000111111111" id="card-number"  minlength="11" formControlName="cardNumber" required>
     <div *ngIf="creditCardForm.get('cardNumber')?.touched && creditCardForm.get('cardNumber')?.invalid" class="text-danger">
       Card number is required.
     </div>
 
     <label for="expiration-date">Expiration Date (MM/YY):</label>
-    <input type="text" id="expiration-date" formControlName="expirationDate" required>
+    <input type="text" placeholder="08/23" id="expiration-date" maxlength="5" minlength="5" formControlName="expirationDate" required>
     <div *ngIf="creditCardForm.get('expirationDate')?.touched && creditCardForm.get('expirationDate')?.invalid" class="text-danger">
       Expiration date is required.
     </div>
 
     <label for="cvv">CVV:</label>
-    <input type="text" id="cvv" formControlName="cvv" required>
+    <input type="text" placeholder="123" id="cvv" maxlength="3" minlength="3" formControlName="cvv" required>
     <div *ngIf="creditCardForm.get('cvv')?.touched && creditCardForm.get('cvv')?.invalid" class="text-danger">
       CVV is required.
     </div>

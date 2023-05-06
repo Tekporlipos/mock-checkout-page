@@ -1,0 +1,53 @@
+<div class="card">
+  <div class="card-body">
+    <div class="card-title flex-row justify-content-between fs-6 mb-3 fw-bold">
+      <div>Total</div>
+      <div>
+        <span>{{formatCurrent(checkout.events.amount * (getCount()) + (checkout.events.amount*0.01) + ((checkout.events.amount*0.03) *(getCount())), "usd")}}</span>
+        <svg xmlns="http://www.w3.org/2000/svg" height="18" viewBox="0 96 960 960" width="18">
+        <path d="m283 711-43-43 240-240 240 239-43 43-197-197-197 198Z"/>
+      </svg>
+      </div>
+    </div>
+    <div class="card-text">
+      <span class="h6 pb-2">Tickets</span>
+      <div class="flex-row justify-content-between mb-3 mt-2">
+        <div class="fs-6">Resale Tickets: {{formatCurrent(checkout.events.amount, "usd")}} x {{getCount()}}</div>
+        <div>{{formatCurrent(checkout.events.amount * (getCount()), "usd")}}</div>
+      </div>
+      <span class="h6 mb-2">Notes From Seller</span>
+      <p class="fw-light">
+        xfr XFER Proof of at least one dose of COVID-19 vaccination for ages 5 to 11 and guests ages 12 and up will be required to show proof of two COVID-19 vaccine doses or one dose of the Johnson & Johnson vaccine. Masks must be worn.
+      </p>
+
+      <b class="pb-3">Fees</b>
+      <div class="flex-row justify-content-between">
+        <div class="fw-light">Service Fee: {{formatCurrent(checkout.events.amount*0.03, "usd")}} x {{getCount()}}</div>
+        <div class="fw-light">{{formatCurrent((checkout.events.amount*0.03) * getCount(), "usd")}}</div>
+      </div>
+
+      <div class="flex-row justify-content-between pb-2">
+        <div class="fw-light">Order Processing Fee</div>
+        <div class="fw-light">{{formatCurrent(checkout.events.amount*0.01, "usd")}}</div>
+      </div>
+
+      <span class="fw-bold fs-6 pb-2">Delivery</span>
+      <div class="flex-row justify-content-between">
+        <div class="fw-light">Mobile Entry</div>
+        <div class="fw-light">Free</div>
+      </div>
+      <br>
+      <b class="text-primary pt-3 a" routerLink="/">Cancel Order</b>
+      <br>
+      <br>
+      <small class="fw-semibold ">*All Sales Final - No Refunds</small>
+      <br>
+      <br>
+      <div class="mb-3 flex-row align-content-center">
+        <input type="checkbox" > <span class="ps-1 fw-lighter">I have read and agree to the current <span class="text-primary">Terms of Use</span>.</span>
+      </div>
+      <button class="btn btn-success btn-lg w-100 mb-3">Place Order</button>
+      <p>"Exceptions may apply, see our Terms of Use.</p>
+    </div>
+  </div>
+</div>

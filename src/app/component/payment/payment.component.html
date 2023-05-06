@@ -1,0 +1,71 @@
+<div class="card mt-3">
+  <div class="card-body">
+    <div class="card-title flex-row justify-content-between">
+      <div class="card-title fs-6  flex-row">Payment
+       <app-check/>
+      </div>
+      <small class="fw-lighter">Powered by security pay</small>
+    </div>
+    <div class="card-title p-1 ps-2">Use Credit / Debit Card</div>
+
+    <div class="card-text bg-light-blue p-4 m-2" *ngFor="let card of cards; let i = index">
+      <div class="flex-row">
+        <div class="pe-2">
+          <input type="radio" [checked]="i === 0 " >
+        </div>
+        <img class="pe-2 card-logo"  src="./assets/visa.png">
+        <div class="flex-column">
+          <small class="fw-normal">Visa - {{card.name.substring(0,4)}}</small>
+          <br>
+          <small class="fw-lighter">{{card.name}} | exp. {{card.expiration}}</small>
+          <br>
+          <small>
+            <a class="fw-light a" (click)="openModal(card.id)"><b>Edit</b></a> |
+            <a class="fw-light a" (click)="delete(card.id)"><b>Delete</b></a>
+          </small>
+        </div>
+      </div>
+      <div class="ps-4 mt-2">
+        <small class="fw-light">Security Code</small> <br>
+        <div class="sc">
+          <div class="card-security">
+            <div>
+              <svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 96 960 960" width="24">
+                <path d="M207.858 624Q188 624 174 609.858q-14-14.141-14-34Q160 556 174.142 542q14.141-14 34-14Q228 528 242 542.142q14 14.141 14 34Q256 596 241.858 610q-14.141 14-34 14Zm272 0Q460 624 446 609.858q-14-14.141-14-34Q432 556 446.142 542q14.141-14 34-14Q500 528 514 542.142q14 14.141 14 34Q528 596 513.858 610q-14.141 14-34 14Zm272 0Q732 624 718 609.858q-14-14.141-14-34Q704 556 718.142 542q14.141-14 34-14Q772 528 786 542.142q14 14.141 14 34Q800 596 785.858 610q-14.141 14-34 14Z"/>
+              </svg>
+            </div>
+            <div>
+              <app-check/>
+            </div>
+          </div>
+          <svg xmlns="http://www.w3.org/2000/svg" height="35" fill="gray" viewBox="0 96 960 960" width="35">
+            <path d="M844 360v432q0 27.5-19.75 47.25T777 859H183q-27.5 0-47.25-19.75T116 792V360q0-27.5 19.75-47.25T183 293h594q27.5 0 47.25 19.75T844 360Zm-693 90h658v-90q0-12-10-22t-22-10H183q-12 0-22 10t-10 22v90Zm0 87v255q0 12 10 22t22 10h594q12 0 22-10t10-22V537H151Zm0 287V328v496Z"/>
+          </svg>
+          <small class=" mt-2 fw-lighter"> 3-digits on back of card</small>
+        </div>
+      </div>
+    </div>
+
+    <div class="m-4">
+      <div class="sc">
+        <div >
+          <svg xmlns="http://www.w3.org/2000/svg" fill="blue" height="34" viewBox="0 96 960 960" width="34">
+            <path d="M463 837V593H219v-35h244V314h35v244h244v35H498v244h-35Z"/>
+          </svg>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="gray" height="32" viewBox="0 96 960 960" width="32">
+          <path d="M844 360v432q0 27.5-19.75 47.25T777 859H183q-27.5 0-47.25-19.75T116 792V360q0-27.5 19.75-47.25T183 293h594q27.5 0 47.25 19.75T844 360Zm-693 90h658v-90q0-12-10-22t-22-10H183q-12 0-22 10t-10 22v90Zm0 87v255q0 12 10 22t22 10h594q12 0 22-10t10-22V537H151Zm0 287V328v496Z"/>
+        </svg>
+        <span class=" mt-1 ms-2 f20 text-primary a" mat-raised-button (click)="openModal('')"> Add New Card</span>
+      </div>
+    </div>
+
+    <div class="m-4">
+      <small>Or Pay With</small>
+      <br>
+      <small class="fw-normal">
+        By using a digital wallet and continuing past this page, you have read and are accepting the <span class="text-primary">Terms of Use.</span>
+      </small>
+    </div>
+  </div>
+</div>

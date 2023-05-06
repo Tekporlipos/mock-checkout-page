@@ -1,0 +1,44 @@
+.flex-row{
+  display: flex;
+  justify-content: flex-start;
+  align-content: flex-start;
+}
+.card-logo{
+  height: 20px;
+  width: 50px;
+}
+.bg-light-blue{
+  background-color: rgba(173, 216, 230, 0.16);
+  border: solid rgba(173, 216, 230, 0.49) 2px;
+}
+.card-security{
+  width: 100px;
+  height: 40px;
+  border: solid rgba(84, 89, 108, 0.49) 1px;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  padding-left: 5px;
+  padding-right: 5px;
+  padding-top: 6px;
+}
+
+
+
+.sc{
+  display: grid;
+  grid-template-columns: repeat(3, auto);
+  flex-direction: row;
+  justify-content: start;
+  align-content: center;
+}
+
+.f20{
+  font-size: 15px;
+}
+
+.fs-7{
+  font-size: 11px;
+  line-height: 0;
+}
+
