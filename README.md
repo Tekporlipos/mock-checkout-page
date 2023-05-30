@@ -11,7 +11,7 @@ To get started with the project, follow these steps:
 
 bash
 
-`git clone https://github.com/<your-username>/mock-checkout-page.git`
+`git clone https://github.com/Tekporlipos/mock-checkout-page.git`
 
     Navigate to the project directory by running the following command:
 
